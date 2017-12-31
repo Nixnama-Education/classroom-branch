@@ -58,4 +58,5 @@ include apache_nixnama::hosts
 include apache_nixnama::conf_dir::eduenthus_html
 include apache_nixnama::conf_dir::nixnama_html
 include apache_nixnama::service
+include apache_nixnama::main_conf
 }
