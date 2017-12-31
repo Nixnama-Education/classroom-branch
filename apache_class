@@ -1,0 +1,86 @@
+class apache {
+
+package {'httpd':
+ensure => present,
+}
+
+service {'httpd':
+ensure => running,
+enable => true,
+}
+
+file {'directory for nixnama.com':
+ensure => directory,
+path => '/var/www/nixnama',
+require => Package['httpd'],
+}
+
+file {'directory for eduenthus.com':
+ensure => directory,
+path => '/var/www/eduenthus',
+require => Package['httpd'],
+}
+
+file {'content for nixnama.com':
+ensure => file,
+path => '/var/www/nixnama/index.html',
+content => '<html> 
+<body>
+hi..this is nixnama.com
+</body>
+</html>',
+}
+
+file {'content for eduenthus.com':
+ensure => file,
+path => '/var/www/eduenthus/index.html',
+content => '<html>
+<body>
+hi.,,.this is eduenthus
+</body>
+</html>',
+}
+
+
+
+
+file{'file for virttual host nixnama.com':
+path => '/etc/httpd/conf.d/nixnama.conf',
+content => '<VirtualHost *:80>
+    DocumentRoot "/var/www/nixnama"
+    ServerName nixnama.com
+</VirtualHost>',
+notify => Service['httpd'],
+require => Package['httpd'],
+}
+
+
+file{'file for virttual host eduenthus.com':
+path => '/etc/httpd/conf.d/eduenthus.conf',
+content => '<VirtualHost *:80>
+    DocumentRoot "/var/www/eduenthus"
+    ServerName eduenthus.com
+</VirtualHost>',
+require => Package['httpd'],
+notify => Service['httpd'],
+
+}
+
+
+host { 'nixnama':
+  ensure       => 'present',
+  host_aliases => ['nixnama.com'],
+  ip           => '192.168.10.20',
+  target       => '/etc/hosts',
+}
+
+
+host { 'eduenthus':
+  ensure       => 'present',
+  host_aliases => ['eduenthus.com'],
+  ip           => '192.168.10.20',
+  target       => '/etc/hosts',
+
+}
+
+}
