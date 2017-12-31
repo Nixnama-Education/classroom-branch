@@ -52,6 +52,7 @@ class apache_nixnama {
 #include apache_nixnama::service
 
 include apache_nixnama::package
+include apache_nixnama::param
 include apache_nixnama::vhost_nixnama
 include apache_nixnama::vhost_eduenthus
 include apache_nixnama::hosts

@@ -1,18 +1,18 @@
-class apache_nixnama::conf_dir::nixnama_html {
+class apache_nixnama::conf_dir::nixnama_html inherits apache_nixnama::param {
 
 
 file {'directory for nixnama.com':
 ensure => directory,
-path => '/var/www/nixnama',
+path => "${html_path}/${second_host}",
 #require => Package['httpd'],
 }
 
 file {'content for nixnama.com':
 ensure => file,
-path => '/var/www/nixnama/index.html',
+path => "${html_path}/${second_host}/index.html",
 content => '<html>
 <body>
-hi..this is nixnama.com
+hi..this is nixnama.com with variable
 </body>
 </html>',
 }

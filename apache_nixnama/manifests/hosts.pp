@@ -7,7 +7,7 @@ class apache_nixnama::hosts {
 host { 'nixnama':
   ensure       => 'present',
   host_aliases => ['nixnama.com'],
-  ip           => '192.168.10.20',
+  ip           => "$::ipaddress",
   target       => '/etc/hosts',
 }
 
@@ -15,7 +15,7 @@ host { 'nixnama':
 host { 'eduenthus':
   ensure       => 'present',
   host_aliases => ['eduenthus.com'],
-  ip           => '192.168.10.20',
+  ip           => "$::ipaddress",
   target       => '/etc/hosts',
 
 }
