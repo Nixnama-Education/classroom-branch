@@ -43,21 +43,15 @@
 # Copyright 2017 Your name here, unless otherwise noted.
 #
 class apache_nixnama {
+
 #include apache_nixnama::package
-#include apache_nixnama::vhost-nixnama
-#include apache_nixnama::vhost-eduenthus
+#include apache_nixnama::param
+#include apache_nixnama::vhost_nixnama
+#include apache_nixnama::vhost_eduenthus
 #include apache_nixnama::hosts
 #include apache_nixnama::conf_dir::eduenthus_html
 #include apache_nixnama::conf_dir::nixnama_html
 #include apache_nixnama::service
-
-include apache_nixnama::package
-include apache_nixnama::param
-include apache_nixnama::vhost_nixnama
-include apache_nixnama::vhost_eduenthus
-include apache_nixnama::hosts
-include apache_nixnama::conf_dir::eduenthus_html
-include apache_nixnama::conf_dir::nixnama_html
-include apache_nixnama::service
-include apache_nixnama::main_conf
+#include apache_nixnama::main_conf
+include apache_nixnama::temp
 }
