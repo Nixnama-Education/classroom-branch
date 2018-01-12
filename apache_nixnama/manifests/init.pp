@@ -44,14 +44,16 @@
 #
 class apache_nixnama {
 
-#include apache_nixnama::package
-#include apache_nixnama::param
+include apache_nixnama::package
+include apache_nixnama::param
+include apache_nixnama::vhost_conf
 #include apache_nixnama::vhost_nixnama
 #include apache_nixnama::vhost_eduenthus
-#include apache_nixnama::hosts
+include apache_nixnama::hosts
 #include apache_nixnama::conf_dir::eduenthus_html
 #include apache_nixnama::conf_dir::nixnama_html
-#include apache_nixnama::service
-#include apache_nixnama::main_conf
-include apache_nixnama::temp
+include apache_nixnama::conf_dir::vhost_html
+include apache_nixnama::service
+include apache_nixnama::main_conf
+#include apache_nixnama::temp
 }

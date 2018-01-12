@@ -1,5 +1,4 @@
-<html>
-<body>
-hi.,,.this is <%= @first_host %> and using template
-</body>
-</html>
+<VirtualHost *:80>
+    DocumentRoot <%= @html_path %>/<%= @first_host %>
+    ServerName <%= @first_host %>.com
+</VirtualHost>
