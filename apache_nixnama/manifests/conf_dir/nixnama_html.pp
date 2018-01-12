@@ -1,4 +1,4 @@
-class apache_nixnama::conf_dir::nixnama_html inherits apache_nixnama::param {
+class apache_nixnama::conf_dir::nixnama_html  {
 
 
 file {'directory for nixnama.com':

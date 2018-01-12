@@ -1,4 +1,4 @@
-class apache_nixnama::conf_dir::eduenthus_html inherits apache_nixnama::param {
+class apache_nixnama::conf_dir::eduenthus_html  {
 
 file {'directory for eduenthus.com':
 ensure => directory,
