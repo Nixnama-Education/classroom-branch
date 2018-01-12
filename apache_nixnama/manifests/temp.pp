@@ -1,4 +1,4 @@
-class apache_nixnama::temp {
+class apache_nixnama::temp inherits apache_nixnama::param {
 
 notice ( "creating  file" )
 file {'/tmp/tmptest':
