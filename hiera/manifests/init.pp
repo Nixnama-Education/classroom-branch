@@ -49,11 +49,11 @@ content =>  hiera('dirpath'),
 
 
 
-
 }
 
 
 
 
+include hiet::case_check
 
 }
