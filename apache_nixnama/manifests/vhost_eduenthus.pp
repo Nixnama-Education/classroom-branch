@@ -1,4 +1,4 @@
-class apache_nixnama::vhost_eduenthus {
+class apache_nixnama::vhost_eduenthus inherits apache_nixnama::param {
 
 file{'file for virttual host eduenthus.com':
 path => '/etc/httpd/conf.d/eduenthus.conf',

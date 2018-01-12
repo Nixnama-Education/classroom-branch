@@ -1,4 +1,4 @@
-class apache_nixnama::vhost_nixnama  {
+class apache_nixnama::vhost_nixnama inherits apache_nixnama::param {
  
 
 

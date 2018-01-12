@@ -1,4 +1,4 @@
-class apache_nixnama::main_conf {
+class apache_nixnama::main_conf inherits apache_nixnama::param {
 
 file {'httpd conf file':
 ensure => file,
